@@ -1,0 +1,38 @@
+{
+  "name": "hof-behaviour-session",
+  "version": "1.0.0",
+  "description": "HOF Behaviour for reading and writing to the session",
+  "main": "index.js",
+  "scripts": {
+    "test:lint": "eslint .",
+    "test:unit": "istanbul cover _mocha",
+    "test": "npm run test:lint && npm run test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UKHomeOfficeForms/hof-behaviour-session.git"
+  },
+  "author": "UKHomeOfficeForms",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UKHomeOfficeForms/hof-behaviour-session/issues"
+  },
+  "homepage": "https://github.com/UKHomeOfficeForms/hof-behaviour-session#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "eslint-config-homeoffice": "^2.1.0",
+    "hof-form-controller": "^2.0.0",
+    "hof-model": "^2.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "proxyquire": "^1.7.11",
+    "reqres": "^1.2.2",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
+  }
+}
