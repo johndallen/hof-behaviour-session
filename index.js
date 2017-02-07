@@ -5,9 +5,11 @@ const path = require('path');
 
 module.exports = SuperClass => class extends SuperClass {
   getValues(req, res, callback) {
-    const json = req.sessionModel.toJSON();
-    delete json.errorValues;
-    callback(null, Object.assign({}, json, req.sessionModel.get('errorValues')));
+    super.getValues(req, res, (err, values) => {
+      const json = req.sessionModel.toJSON();
+      delete json.errorValues;
+      callback(err, Object.assign({}, values, json, req.sessionModel.get('errorValues')));
+    });
   }
 
   saveValues(req, res, callback) {
