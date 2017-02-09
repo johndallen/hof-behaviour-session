@@ -48,6 +48,14 @@ describe('Sessions Behaviour', () => {
     });
   });
 
+  describe('configure', () => {
+    it('throws an error if req.sessionModel hasn\'t been set', () => {
+      expect(() => {
+        sessions.configure({}, res, () => {});
+      }).to.throw();
+    });
+  });
+
   describe('getErrors', () => {
     it('only returns errors from fields relevant to the current step', () => {
       req.sessionModel.set('errors', {

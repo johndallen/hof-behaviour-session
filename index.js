@@ -4,12 +4,17 @@ const _ = require('lodash');
 const path = require('path');
 
 module.exports = SuperClass => class extends SuperClass {
+  configure(req, res, callback) {
+    if (!req.sessionModel) {
+      throw new Error('req.sessionModel must be defined in order to use this behaviour');
+    }
+    super.configure(req, res, callback);
+  }
+
   getValues(req, res, callback) {
-    super.getValues(req, res, (err, values) => {
-      const json = req.sessionModel.toJSON();
-      delete json.errorValues;
-      callback(err, Object.assign({}, values, json, req.sessionModel.get('errorValues')));
-    });
+    const json = req.sessionModel.toJSON();
+    delete json.errorValues;
+    callback(null, Object.assign({}, json, req.sessionModel.get('errorValues')));
   }
 
   saveValues(req, res, callback) {
