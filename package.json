@@ -1,6 +1,6 @@
 {
   "name": "hof-behaviour-session",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HOF Behaviour for reading and writing to the session",
   "main": "index.js",
   "scripts": {
