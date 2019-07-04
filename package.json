@@ -6,7 +6,9 @@
   "scripts": {
     "test:lint": "eslint .",
     "test:unit": "istanbul cover _mocha",
-    "test": "npm run test:lint && npm run test:unit"
+    "test": "npm run test:lint && npm run test:unit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,8 @@
   "homepage": "https://github.com/UKHomeOfficeForms/hof-behaviour-session#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -34,5 +37,6 @@
     "reqres": "^1.2.2",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0"
-  }
+  },
+  "snyk": true
 }
